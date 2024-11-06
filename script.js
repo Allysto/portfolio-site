@@ -1,4 +1,7 @@
 // Get the button
+window.onload = function() {
+    window.scrollTo(0, 0);
+};
 const backToTopButton = document.getElementById('backToTop');
 
 // Function to display the "Back to Top" button when scrolled to bottom
