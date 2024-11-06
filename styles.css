@@ -1,0 +1,317 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f5f5f5; /* Light gray background for modern appeal */
+    color: #333;
+    scroll-behavior: smooth;
+    transition: background-color 0.3s ease;
+}
+
+/* Header */
+header {
+    background-color: #4a5568; /* Dark gray for header */
+    padding: 1rem 0;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: burlywood;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Fade-in Animation for Text */
+.hero-text {
+    background-color: rgba(0, 0, 0, 0.5); /* Dark semi-transparent background for text */
+    padding: 2rem;
+    border-radius: 10px;
+    opacity: 0; /* Start with hidden text */
+    animation: fadeIn 1s ease-out forwards; /* Apply fadeIn animation */
+    animation-delay: 1s; /* Delay for 2 seconds before starting */
+}
+
+.hero-text h1,
+.hero-text p {
+    opacity: 0; /* Initially hidden */
+    animation: fadeIn 1s ease-out forwards; /* Apply fadeIn animation */
+    animation-delay: 1s; /* Delay for 2 seconds */
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-text p {
+    font-size: 1.5rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Fade-in Keyframes */
+@keyframes fadeIn {
+    0% {
+        opacity: 0; /* Start hidden */
+        transform: translateY(20px); /* Move the text down initially */
+    }
+    100% {
+        opacity: 1; /* Fully visible */
+        transform: translateY(0); /* End with normal position */
+    }
+}
+
+
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img.profile-pic {
+    width: 70px;
+    height: 70px;
+    border-radius: 70%;
+    margin-right: 10px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 1rem;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #f4a261;
+}
+
+
+
+
+/* Section Headings */
+section h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+    text-align: center;
+    position: relative;
+}
+
+section h2::after {
+    content: '';
+    width: 80px;
+    height: 3px;
+    background-color: #f4a261;
+    display: block;
+    margin: 10px auto;
+}
+
+/* About Section */
+.about, .skills, .projects, .contact {
+    padding: 3rem 2rem;
+    background-color: #fff;
+    border-radius: 8px;
+    max-width: 900px;
+    margin: 2rem auto;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.about p, .skills ul, .project, .contact-icons {
+    font-size: 1.1rem;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Skills Section */
+.skills ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 0;
+}
+
+.skills ul li {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.skills ul li:hover {
+    background-color: #f4a261;
+    transform: scale(1.05);
+}
+
+/* Projects Section */
+.projects {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.project {
+    margin: 0; /* Remove margin as Flexbox will manage spacing */
+    padding: 2rem;
+    background-color: #fff;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    transition: transform 0.3s;
+    width: 300px; /* Set a fixed width for the project boxes */
+}
+
+.project:hover {
+    transform: translateY(-5px);
+}
+
+.project h3 {
+    text-align: center;
+    font-size: 1.6rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.project a {
+    color: #f4a261;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.project a:hover {
+    color: #333;
+    text-decoration: underline;
+}
+
+
+/* Contact Section */
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.contact-icon {
+    font-size: 1.5rem;
+    color: #333;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.contact-icon:hover {
+    color: #f4a261;
+    transform: scale(1.1);
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-text p {
+        font-size: 1.2rem;
+    }
+
+    .skills ul {
+        flex-direction: column;
+    }
+
+    .project {
+        padding: 1.5rem;
+    }
+}
+
+/* Back to Top Button */
+#backToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #f4a261; /* Change color as needed */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: none; /* Initially hidden */
+    transition: opacity 0.3s ease-in-out;
+}
+
+#backToTop:hover {
+    background-color: #ae754d; /* Darker shade when hovering */
+}
+
