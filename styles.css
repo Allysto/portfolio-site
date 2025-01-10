@@ -315,3 +315,21 @@ footer p {
     background-color: #ae754d; /* Darker shade when hovering */
 }
 
+/* General project styles */
+.project {
+    padding: 20px;
+    margin: 15px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+/* Background color for Project 1 */
+.project-1 {
+    background-color: #f0f8ff; /* Light blue */
+}
+
+/* Background color for Project 2 */
+.project-2 {
+    background-color: #fef5e7; /* Light peach */
+}
+
