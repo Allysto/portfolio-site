@@ -1,43 +1,73 @@
-// Get the button
-window.onload = function() {
-    window.scrollTo(0, 0);
-};
-const backToTopButton = document.getElementById('backToTop');
+document.addEventListener('DOMContentLoaded', function() {
+    // Dark Mode Toggle
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    darkModeToggle.addEventListener('click', function() {
+        document.body.classList.toggle('dark-mode');
+        const isDarkMode = document.body.classList.contains('dark-mode');
+        localStorage.setItem('darkMode', isDarkMode);
+        darkModeToggle.innerHTML = isDarkMode ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+    });
 
-// Function to display the "Back to Top" button when scrolled to bottom
-window.onscroll = function() {
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        backToTopButton.style.display = 'block'; // Show button after 100px scroll
-    } else {
-        backToTopButton.style.display = 'none'; // Hide button when scrolled up
+    // Check for saved dark mode preference
+    if (localStorage.getItem('darkMode') === 'true') {
+        document.body.classList.add('dark-mode');
+        darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
     }
-};
 
-// Scroll to top when button is clicked
-backToTopButton.onclick = function() {
-    window.scrollTo({ top: 0, behavior: 'smooth' }); // Smooth scroll to top
-};
-
-// Add this to your existing script.js
-
-// Project hover effects
-const projects = document.querySelectorAll('.project');
-projects.forEach(project => {
-    project.addEventListener('mouseenter', () => {
-        project.style.transform = 'translateY(-10px)';
-        project.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
+    // Back to Top Button
+    const backToTopButton = document.getElementById('backToTop');
+    window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+            backToTopButton.classList.add('visible');
+        } else {
+            backToTopButton.classList.remove('visible');
+        }
     });
-    
-    project.addEventListener('mouseleave', () => {
-        project.style.transform = 'translateY(0)';
-        project.style.boxShadow = '0 4px 12px rgba(0,0,0,0.05)';
-    });
-});
 
-// Smooth scrolling for project links
-document.querySelectorAll('.project-links a').forEach(link => {
-    link.addEventListener('click', (e) => {
-        e.preventDefault();
-        window.open(link.href, '_blank');
+    backToTopButton.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
     });
+
+    // Visitor Counter
+    let visitorCount = localStorage.getItem('visitorCount') || 0;
+    visitorCount++;
+    document.getElementById('visitorCount').textContent = visitorCount;
+    localStorage.setItem('visitorCount', visitorCount);
+
+    // Smooth Scrolling for Navigation
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Project Hover Effects
+    const projects = document.querySelectorAll('.project');
+    projects.forEach(project => {
+        project.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-10px)';
+            this.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
+        });
+        
+        project.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+            this.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
+        });
+    });
+
+    // Scroll to top on page load
+    window.scrollTo(0, 0);
 });
