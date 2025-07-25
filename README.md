@@ -19,7 +19,7 @@
 ## 🚀 Project Highlights
 1. **E-Commerce Demo**  
    - Frontend prototype with cart simulation  
-  [Live Demo](https://allysto.github.io/ecommerce-site/)
+ - [View Code](https://github.com/allysto/ecommerce-site) | [Live Demo](https://allysto.github.io/ecommerce-site/)
 
 2. **Job Application Tracker**  
    - Single-page application with analytics  
