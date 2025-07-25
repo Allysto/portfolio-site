@@ -1,7 +1,7 @@
 # Alfred Lebo's Dynamic Portfolio
 
 **Live Demo:** [View Portfolio](https://allysto.github.io/portfolio-site/)  
-portfolio screenshot.png
+![Portfolio Screenshot](./porfolio screenshot.png)
 
 ## ✨ Key Features
 - **Fully Responsive Design**: Adapts seamlessly to mobile, tablet, and desktop
