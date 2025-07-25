@@ -23,7 +23,7 @@
 
 2. **Job Application Tracker**  
    - Single-page application with analytics  
-   (https://github.com/allysto/Job-Application-Tracker)
+   [(https://github.com/allysto/Job-Application-Tracker)](https://allysto.github.io/Job-Application-Tracker/)
 
 ## 📌 How to Use
 1. **Clone the repository**:
