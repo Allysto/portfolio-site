@@ -71,3 +71,42 @@ document.addEventListener('DOMContentLoaded', function() {
     // Scroll to top on page load
     window.scrollTo(0, 0);
 });
+
+// Skills Progress Bars Animation
+function animateProgressBars() {
+    const progressBars = document.querySelectorAll('.progress-bar');
+    
+    // Set initial state (hidden)
+    progressBars.forEach(bar => {
+        bar.style.width = '0';
+    });
+
+    // Create intersection observer
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const bars = entry.target.querySelectorAll('.progress-bar');
+                bars.forEach(bar => {
+                    const targetWidth = bar.getAttribute('data-target');
+                    bar.style.width = targetWidth;
+                    bar.setAttribute('data-percent', targetWidth);
+                });
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    // Observe skills container
+    const skillsContainer = document.querySelector('.skills-container');
+    if (skillsContainer) {
+        observer.observe(skillsContainer);
+    }
+}
+
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    animateProgressBars();
+    
+    // Your existing JS code (keep all your current functionality)
+    // Dark mode toggle, back to top button, etc.
+});
