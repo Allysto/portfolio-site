@@ -1,7 +1,7 @@
 # Alfred Lebo's Dynamic Portfolio
 
 **Live Demo:** [View Portfolio](https://allysto.github.io/portfolio-site/)  
-![Portfolio Screenshot](./screenshot.png) *Replace with actual screenshot path*
+![Portfolio Screenshot](./portfolio screenshot.png) *Replace with actual screenshot path*
 
 ## ✨ Key Features
 - **Fully Responsive Design**: Adapts seamlessly to mobile, tablet, and desktop
@@ -19,7 +19,7 @@
 ## 🚀 Project Highlights
 1. **E-Commerce Demo**  
    - Frontend prototype with cart simulation  
- - [View Code](https://github.com/allysto/ecommerce-site) | [Live Demo](https://allysto.github.io/ecommerce-site/)
+  [Live Demo](https://allysto.github.io/ecommerce-site/)
 
 2. **Job Application Tracker**  
    - Single-page application with analytics  
